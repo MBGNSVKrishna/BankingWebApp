@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model BankingWebApp.Models.AccountUser
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AccountUser</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Forgot">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Sques" class="control-label"></label>
+                <select name="Category" asp-for="Sques" class="form-control">
+                    <option value="0">Favmovie</option>
+                    <option value="1">Favbook</option>
+                </select>
+                <span asp-validation-for="Sques" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SAns" class="control-label"></label>
+                <input asp-for="SAns" class="form-control" />
+                <span asp-validation-for="SAns" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-controller="AccountUsers" asp-route-id="UserId">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
