@@ -39,8 +39,8 @@
         a:hover {
             color: red;
         }
-        body{
-            background-color:#d9a491;
+        body {
+            background-color: dimgray;
         }
     </style>
 
@@ -49,12 +49,12 @@
 <body>
     <br />
     <br />
-    <h2>Welcome @ViewBag.Uname !!  Here we providing the services as below</h2>
+   
 
     <br>
 
     <div class="container">
-       
+        <h2>Welcome @ViewBag.Uname !!  Here we providing the services as below</h2>
 
         <div class="card-deck">
 
@@ -62,17 +62,18 @@
                 <img class="card-img-top" src="https://s3.ap-southeast-1.amazonaws.com/com.ft.uploads/wp-content/uploads/2021/02/17142755/main-qimg-53ebd4eb9022ee0e470d4f0e62166751.png" alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text"> Are you worrying by thinking about your future then dont worry we are here to help you by providing services  in form of Fd with good interest rates. Be hurry dont lose this chance. Opening a fd account is easy in our website you can just click here..</p>
-                    
-                    <a asp-action="Create" asp-controller="FDs" class="btn btn-success btn-lg"> FixedDeposit
+
+                    <a asp-action="Create" asp-controller="FDs" class="btn btn-success btn-lg">
+                        FixedDeposit
                         @*<span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart*@
                     </a>
-                 
+
                 </div>
             </div>
 
 
             <div class="card">
-             @*   <img class="card-img-top" src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1415&q=80" alt="Card image cap">
+                @*   <img class="card-img-top" src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1415&q=80" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Mad About Waves(350ml) <span class="bg-warning badge">3.5<i class="material-icons" style="font-size:10px">star</i> </span></h5>
                     <h5 class="card-title">Rs.150 <s style="font-size:12px">Rs.200</s>20%<span class="glyphicon glyphicon-exclamation-sign " style="color:red"></span></h5>
@@ -91,35 +92,35 @@
             </div>
 
             <div class="card">
-                   <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgAku2NXgAkzdKiweTjGuUgVrtjIyFJtW0uGRU6jQfYPWyZGgFn2V65T0MNCJYSRqE1SQ&usqp=CAU" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">View-Profile</h5>
-           
+                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgAku2NXgAkzdKiweTjGuUgVrtjIyFJtW0uGRU6jQfYPWyZGgFn2V65T0MNCJYSRqE1SQ&usqp=CAU" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">View-Profile</h5>
 
-            <p class="card-text">
-               You can click the below link to view your profile details
-            </p>
-            <a asp-action="Details" asp-controller="AccountUsers" asp-route-id="@ViewBag.Id" class="btn btn-success btn-lg">
-                <span class="glyphicon glyphicon-shopping-cart"></span> View-Profile
 
-            </a>
-           
-        </div>
+                    <p class="card-text">
+                        You can click the below link to view your profile details
+                    </p>
+                    <a asp-action="Details" asp-controller="AccountUsers" asp-route-id="@ViewBag.Id" class="btn btn-success btn-lg">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> View-Profile
+
+                    </a>
+
+                </div>
             </div>
 
             <div class="card">
-                  <img class="card-img-top" src="https://img.freepik.com/free-vector/special-offer-creative-sale-banner-design_1017-16284.jpg?size=626&ext=jpg" alt="Card image cap">
-        <div class="card-body">
-         
+                <img class="card-img-top" src="https://img.freepik.com/free-vector/special-offer-creative-sale-banner-design_1017-16284.jpg?size=626&ext=jpg" alt="Card image cap">
+                <div class="card-body">
 
-            <p class="card-text">
-              Very Excited Offers are waiting for you .dont miss this chance Hurry up.To check Offers click here
-            </p>
-            <a asp-action="Offers" asp-controller="Default" class="btn btn-success btn-lg">
-              Special-Offers
-            </a>
-          
-        </div>
+
+                    <p class="card-text">
+                        Very Excited Offers are waiting for you .dont miss this chance Hurry up.To check Offers click here
+                    </p>
+                    <a asp-action="Offers" asp-controller="Default" class="btn btn-success btn-lg">
+                        Special-Offers
+                    </a>
+
+                </div>
             </div>
 
 
@@ -128,17 +129,17 @@
 
 
         <div class="card" style="width:250px">
-             <img class="card-img-top" src="https://ittutorials.net/wp-content/uploads/reset-password.jpg" alt="Card image cap">
-        <div class="card-body">
-            
-            <p class="card-text">
-                Hi User !! If you want to change your password click here!!
-            </p>
-            <a  asp-action="Details" asp-controller="AccountUsers" asp-route-id="@ViewBag.Id" class="btn btn-success btn-lg">
-               Reset/Change Password
-            </a>
-          
-        </div>
+            <img class="card-img-top" src="https://ittutorials.net/wp-content/uploads/reset-password.jpg" alt="Card image cap">
+            <div class="card-body">
+
+                <p class="card-text">
+                    Hi User !! If you want to change your password click here!!
+                </p>
+                <a asp-action="Details" asp-controller="AccountUsers" asp-route-id="@ViewBag.Id" class="btn btn-success btn-lg">
+                    Reset/Change Password
+                </a>
+
+            </div>
         </div>
 
     </div>

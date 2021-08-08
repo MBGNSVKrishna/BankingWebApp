@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using BankingWebApp.Data;
+using DNTCaptcha.Core;
+using Microsoft.AspNetCore.Http;
 
 namespace BankingWebApp
 {
@@ -29,6 +31,20 @@ namespace BankingWebApp
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(60);//You can set Time   
             });
+            services.AddDNTCaptcha(options =>
+         options.UseCookieStorageProvider(SameSiteMode.Strict)
+        .WithEncryptionKey("This is my secure key!")
+         .InputNames(// This is optional. Change it if you don't like the default names.
+                     new DNTCaptchaComponent
+                     {
+                         CaptchaHiddenInputName = "DNTCaptchaText",
+                         CaptchaHiddenTokenName = "DNTCaptchaToken",
+                         CaptchaInputName = "DNTCaptchaInputText"
+                     })
+           .ShowThousandsSeparators(false)
+             .Identifier("dntCaptcha")// This is optional. Change it if you don't like its default name.
+
+   );
 
             services.AddDbContext<BankingWebAppContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BankingWebAppContext")));

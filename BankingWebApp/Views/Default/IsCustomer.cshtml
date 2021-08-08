@@ -43,17 +43,17 @@
 
 
 
-         @*   html, body {
-                background-image: url('https://d2908q01vomqb2.cloudfront.net/9e6a55b6b4563e652a23be9d623ca5055c356940/2021/05/11/digital-currency.jpg');
+          @*  html, body {
+                background-image: url('https://75d03c5f1bfbbbb9cc13-369a671ebb934b49b239e372822005c5.ssl.cf1.rackcdn.com/data-encryption-advanced-authentication-digital-signing-showcase_image-4-w-1602.jpg');
                 background-size: cover;
                 background-repeat: no-repeat;
                 height: 100%;
                 font-family: 'Numans', sans-serif;
             }*@
-         body{
-             background-color:#d9a491
-         }
-
+          body{
+              background-color: magenta;
+          }
+           
             .container {
                 height: 100%;
                 align-content: center;
@@ -61,7 +61,7 @@
 
             .card {
 
-                height: 400px;
+                height: 490px;
                 margin-top: auto;
                 margin-bottom: auto;
                 width: 850px;
@@ -132,20 +132,25 @@
                 .links a {
                     margin-left: 4px;
                 }
+              a.hover{
+                  color:chartreuse;
+              }
         </style>
     </head>
     <body>
         <div>
             <br />
-            <br/><br /><br/><br/><br /><br/>
+            <br /><br /><br /><br /><br /><br />
         </div>
-        <div class="container">
+        <div class="container-fluid">
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
                     <div class="row">
                         <div class="col-md-6">
                             <div>
-                                <img src="https://console.kr-asia.com/wp-content/uploads/2020/02/shutterstock_1150180799.jpg" alt="login"   style="width:400px;height :400px" />
+                                <img src="https://www.globalsign.com/application/files/9716/0388/7415/iStock-1175502114.png" alt="login" style="width:390px;height :390px" />
+
+                                <p style="color:white;text-align:center">We are leading Bank Service Providers by providing services 24*7 </p>
                             </div>
                         </div>
 
@@ -154,10 +159,10 @@
                                 <h3>Sign In</h3>
 
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="font-size:18px">
                                 <form asp-action="IsCustomer">
 
-                                
+
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -173,7 +178,27 @@
                                         <input asp-for="Password" class="form-control" placeholder="Password" />
                                         <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
+                                    <div>
+                                        <dnt-captcha asp-captcha-generator-max="999999"
+                                                     asp-captcha-generator-min="111111"
+                                                     asp-captcha-generator-language="English"
+                                                     asp-captcha-generator-display-mode="ShowDigits"
+                                                     asp-use-relative-urls="true"
+                                                     asp-placeholder="Enter Captcha"
+                                                     asp-validation-error-message="Please enter the security code."
+                                                     asp-font-name="Tahoma"
+                                                     asp-font-size="20"
+                                                     asp-fore-color="#333333"
+                                                     asp-back-color="#ccc"
+                                                     asp-text-box-class="text-box form-control"
+                                                     asp-text-box-template="<span class='input-group-prepend'><span class='form-group-text'></span></span>{0}"
+                                                     asp-validation-message-class="text-danger"
+                                                     asp-refresh-button-class="fas fa-redo btn-sm"
+                                                     asp-use-noise="false" />
 
+
+
+                                    </div>
 
                                     <div class="form-group">
                                         <input type="submit" value="Login" class="btn btn-primary" />
@@ -181,12 +206,12 @@
 
 
                                 </form>
-                                <div class="card-footer">
+                                <div class="card-footer" style="font-size:19px">
                                     <div class="d-flex justify-content-center links">
-                                        Don't have an account?<a asp-action="Create" asp-controller="AccountUsers">SignUp</a>
+                                        <h5>Don't have an account?<a asp-action="Create" asp-controller="AccountUsers" style="color: springgreen">SignUp</a></h5>   
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <a asp-action="Forgot">ForgotPassword</a>
+                                        <h5> <a asp-action="Forgot" style="color: springgreen">ForgotPassword ??</a></h5> 
                                     </div>
                                 </div>
                             </div>
@@ -200,11 +225,12 @@
         </div>
 
 
-        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-
-
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/js/jquery.unobtrusive-ajax.js"></script>
 
         @section Scripts {
             @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
