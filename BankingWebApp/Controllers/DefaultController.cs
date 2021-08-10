@@ -4,6 +4,7 @@ using DNTCaptcha.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,12 @@ namespace BankingWebApp.Controllers
     {
         private readonly BankingWebAppContext _context;
         private readonly IDNTCaptchaValidatorService _validatorService;
-       
-        public DefaultController(IDNTCaptchaValidatorService validatorService, BankingWebAppContext context)
+        private readonly DNTCaptchaOptions _captchaOptions;
+        public DefaultController(IDNTCaptchaValidatorService validatorService, BankingWebAppContext context, IOptions<DNTCaptchaOptions> options)
         {
             _validatorService = validatorService;
             _context = context;
+            _captchaOptions = options == null ? throw new ArgumentNullException(nameof(options)) : options.Value;
         }
         public IActionResult Index()
         {
@@ -32,34 +34,36 @@ namespace BankingWebApp.Controllers
         }
         [HttpPost]
          [ValidateAntiForgeryToken]
-        [ValidateDNTCaptcha(
+     /*   [ValidateDNTCaptcha(
             ErrorMessage = "Please Enter Valid Captcha",
             CaptchaGeneratorLanguage = Language.English,
-            CaptchaGeneratorDisplayMode = DisplayMode.ShowDigits)]
+            CaptchaGeneratorDisplayMode = DisplayMode.ShowDigits)]*/
 
         public async Task<IActionResult> IsCustomer([FromForm] AccountUser u)
         {
 
-            if (!ModelState.IsValid) // If `ValidateDNTCaptcha` fails, it will set a `ModelState.AddModelError`.
+            if (!_validatorService.HasRequestValidCaptchaEntry(Language.English, DisplayMode.ShowDigits))
             {
-                //TODO: Save data
-                // return RedirectToAction(nameof(Thanks), new { name = data.Username });
-                var obj = await _context.AccountUser.Where(a => a.UserName.Equals(u.UserName)).FirstOrDefaultAsync();
-                if (obj != null && obj.UserName == u.UserName && obj.Password == u.Password)
-                {
-                    HttpContext.Session.SetInt32("UserId", obj.UserId);
-                    HttpContext.Session.SetString("UserName", obj.UserName.ToString());
-                    HttpContext.Session.SetString("Balance", obj.Amount.ToString());
-                    return RedirectToAction("Services");
-                }
-
-                else
-                {
-                    ModelState.AddModelError("", "Credentials are not matched");
-                }
+                this.ModelState.AddModelError(_captchaOptions.CaptchaComponent.CaptchaInputName, "Please enter the security code as a number.");
+                return RedirectToAction("IsCustomer", "Default");
             }
-         
-            return View();
+
+
+          /*    if (ModelState.IsValid) // If `ValidateDNTCaptcha` fails, it will set a `ModelState.AddModelError`.
+               {
+                   //TODO: Save data
+                   // return RedirectToAction(nameof(Thanks), new { name = data.Username });
+               }*/
+               var obj = await _context.AccountUser.Where(a => a.UserName.Equals(u.UserName)).FirstOrDefaultAsync();
+               if (obj != null && obj.UserName == u.UserName && obj.Password == u.Password)
+               {
+                   HttpContext.Session.SetInt32("UserId", obj.UserId);
+                   HttpContext.Session.SetString("UserName", obj.UserName.ToString());
+                   HttpContext.Session.SetString("Balance", obj.Amount.ToString());
+                   return RedirectToAction("Services");
+               }
+
+            return View();     
         }
 
         public ActionResult  Services()

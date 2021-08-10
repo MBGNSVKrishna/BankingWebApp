@@ -2,7 +2,734 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Banking Website</title>
+
+    <link rel="stylesheet" href="~/css/StyleSheet.css">
+
+
+
+    <!-- CSS only -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1/css/font-awesome.min.css" />
+
+    <style>
+
+
+* {
+
+
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+#nav-bar {
+
+    position:sticky;
+
+    top: 0;
+
+    z-index: 10;
+
+}
+
+
+
+.navbar {
+
+    background: linear-gradient(to right, #dda0dd, #ba55d3);
+
+    padding: 0;
+
+    width:100%;
+
+}
+
+
+
+.navbar-brand img {
+
+    height: 40px;
+
+    padding-left: 20px;
+
+}
+
+
+
+.navbar-nav li {
+
+    padding: 0 10px;
+
+    float: right;
+
+    text-align: left;
+
+}
+
+
+
+.navbar-nav li a{
+
+    color: #fff;
+
+    font-weight: 600;
+
+}
+
+
+
+.fa-bars {
+
+    color: #fff;
+
+    font-size: 30px;
+
+}
+
+
+
+.navbar-toggler {
+
+    outline: none;
+
+}
+
+/*---banner Section---*/
+
+#banner {
+
+    background: linear-gradient(to right, #dda0dd, #ba55d3);
+
+    color: #fff;
+
+    padding-top: 5%;
+
+}
+
+
+
+.promo-title {
+
+    font-size: 40px;
+
+    font-weight: 600;
+
+    margin-top: 100px;
+
+}
+
+
+
+.play-btn {
+
+    width: 45px;
+
+    margin: 20px;
+
+}
+
+
+
+#banner a {
+
+    color: #fff;
+
+    text-decoration: none;
+
+}
+
+/*---Services Section-----*/
+
+#services{
+
+    padding: 80px 0;
+
+
+
+}
+
+.service-img{
+
+    width:100px;
+
+    margin-top:20px;
+
+}
+
+.services{
+
+    padding:20px;
+
+}
+
+.services h4{
+
+    padding:5px;
+
+    margin-top:25px;
+
+    text-transform:uppercase;
+
+}
+
+.title::before{
+
+    content:'';
+
+    background:#7b1798;
+
+    height:5px;
+
+    width:200px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+    display:block;
+
+    transform:translateY(63px);
+
+
+
+}
+
+#services .btn-primary {
+
+    box-shadow: none;
+
+    padding: 8px 25px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: linear-gradient(to right, #dda0dd, #ba55d3);
+
+}
+
+/*-------Dont have an account-------*/
+
+#bannerSec {
+
+    background: linear-gradient(to right, #dda0dd, #ba55d3);
+
+    color: #fff;
+
+    padding-top: 2%;
+
+}
+
+    #bannerSec .btn-info {
+
+        box-shadow: none;
+
+        padding: 10px 30px;
+
+        border: none;
+
+        border-radius: 20px;
+
+        background: linear-gradient(to right, #ffffff, #fff0f5);
+
+        color: #800080;
+
+    }
+
+#bannerSec a {
+
+    color: #fff;
+
+    text-decoration: none;
+
+}
+
+.promo {
+
+    font-size: 50px;
+
+    font-weight: 700;
+
+    margin-top: 100px;
+
+}
+
+/*Secondary nav*/
+
+.secondaryNav {
+
+
+
+    outline: none;
+
+    z-index: 10;
+
+    margin-right:0;
+
+    margin-top:0px;
+
+}
+
+.waysto{
+
+   margin-top:100px;
+
+}
+
+/*-----------someWriteup---------*/
+
+.someWriteup{
+
+    margin-top:50px;
+
+}
+
+/*-------------OFFERS-------------------*/
+
+#offers {
+
+
+
+    padding: 30px 0px;
+
+}
+
+#offers h1 {
+
+    font-weight: 900;
+
+    font-size: 24px;
+
+    padding-bottom: 5px;
+
+}
+
+.offer-title {
+
+    text-align: center;
+
+    padding: 25px 0px;
+
+}
+
+.offer-title p {
+
+    font-size: 18px;
+
+}
+
+.card-body {
+
+
+
+}
+
+.card {
+
+    margin: 20px 10px;
+
+    box-shadow: 0 0 20px 7px rgba(0,0,0,0.4);
+
+}
+
+.card-body a {
+
+
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    margin-top: auto;
+
+    font-weight: 600;
+
+}
+
+.card a:hover {
+
+    color: #63a6b0;
+
+    text-decoration : none;
+
+}
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+   
+
+    <!--banner Section-->
+
+    <section id="banner" style="height:400px;">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <p class="promo-title">WRITE TITLE HERE</p>
+
+                    <p>Write something here tooo,ummm what , maybe a paragraph, think something about a banking</p>
+
+                    <a href="#" class="play-btn"><i class="fa fa-play-circle" aria-hidden="true"></i>Watch Video</a>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <!--if you have a good image put it here-->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--Services Section-->
+
+    <section id="services">
+
+        <div class="container-fluid text-center">
+
+            <h1 class="title">Our Services</h1>
+
+            <div class="row text-center">
+
+                <div class="col-md-4 services">
+
+
+
+                    <img src="~/images/Pay.PNG" class="service-img" />
+
+                    <h4>Pay</h4>
+
+                    <p>Type whatever you like about Pay</p>
+
+                </div>
+
+                <div class="col-md-4 services">
+
+
+
+
+
+                    <img src="~/images/Save.PNG" class="service-img" />
+
+                    <h4>Save</h4>
+
+                    <p>Type whatever you like about Pay</p>
+
+                </div>
+
+                <div class="col-md-4 services">
+
+
+
+
+
+                    <img src="~/images/Invest.PNG" class="service-img" />
+
+                    <h4>Invest</h4>
+
+                    <p>Type whatever you like about Pay</p>
+
+                </div>
+
+            </div>
+
+            <button type="button" class="btn btn-primary">All Sevices</button>
+
+        </div>
+
+    </section>
+
+    <!--banner Section-->
+
+    <section id="bannerSec" style="height:400px;">
+
+        <div class="container-fluid">
+
+
+
+            <div class="text-center">
+
+                <p class="promo">Don't have an Account yet?</p>
+
+                <h4> Open Your Acoount in just 2 minutes!!!</h4>
+
+                <p></p>
+
+                <button type="button" class="btn btn-info">Create An Account</button>
+
+                <p></p>
+
+                <p><a href="#">Already have an account? Log in</a></p>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <!--Ways To Bank Section-->
+
+    <section id="ways" style="height:650px;">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <img src="#" />
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="waysto">
+
+                        <h4 style="color:#86608e">WAYS TO BANK---------</h4>
+
+                        <h2 style="color:black"><bold>STAY UPDATED</bold></h2>
+
+                        <h2>IN SO MANY WAYS</h2>
+
+                    </div>
+
+                    <nav class="navbar navbar-expand-lg navbar-light secondaryNav">
+
+
+
+                        <div class="collapse navbar-collapse" id="navbarNav">
+
+                            <ul class="navbar-nav">
+
+                                <li class="nav-item">
+
+                                    <a class="nav-link" href="#">Mobile</a>
+
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a class="nav-link" href="#">Internet</a>
+
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a class="nav-link" href="#">WhatsApp</a>
+
+                                </li>
+
+                                <li class="nav-item">
+
+                                    <a class="nav-link" href="#">Banks & ATM</a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </nav>
+
+                    <div class="someWriteup">
+
+                        <h4 style="color:#856088">Download the latest Version of iMobile Pay App</h4>
+
+
+
+                        <img src="~/images/Scan.PNG" style="width: 200px; height:200px" />
+
+                        <p style="color:#9400d3">CDB BANK ACCOUNT HOLDERS ></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-------We take your security-------->
+
+    <section id="services">
+
+        <div class="container-fluid text-center">
+
+            <h1 class="title services">WE TAKE YOUR SECURITY</h1>
+
+            <h2>SERIOUSLY !</h2>
+
+            <div class="row" style="margin-top:50px">
+
+                <div class="col-md-4">
+
+                    <h4>Peace of mind for you as we have the most advanced technology & protection</h4>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h4><span><i class="fa fa-shield" aria-hidden="true"></i></span>2 Factor i-safe authentication</h4>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h4>
+
+                        <span><i class="fa fa-shield" aria-hidden="true"></i></span>We make you
+
+                        feel special
+
+                    </h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-----------offers------------->
+
+    <section id="services" style="background-color:#ffe4e1;padding: 30px 0px;">
+
+        <div class="container-fluid text-center">
+
+            <div class="title">
+
+                <h1>OFFERS FOR YOU</h1>
+
+                <p></p>
+
+                <p style="color:#ffe4e1;"> . </p>
+
+                <h3>Get exclusive deals and discounts on thousands of brands</h3>
+
+                <p style="color:#ffe4e1;"> . </p>
+
+            </div>
+
+            <div class="row text-center">
+
+                <div class="col-md-4">
+
+                    <div class="card text-center">
+
+                        <img src="~/images/bb.PNG" class="card-img-top" />
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Get Rs.150 Cashback On Big Basket</h5>
+
+                            <p class="card-text">Get Rs 150 cashback on grocery shopping on Bigbasket Pay using CDB Bank Internet Banking</p>
+
+                            <a href="#">KNOW MORE</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card text-center">
+
+                        <img src="~/images/swigs.PNG" class="card-img-top" />
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Get 15% Discount On Food Order On Swiggy</h5>
+
+                            <p class="card-text">15% discount up to INR 75/- on orders above INR 400/-</p>
+
+                            <a href="#">KNOW MORE</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card text-center">
+
+                        <img src="~/images/licious.PNG" class="card-img-top" />
+
+                        <div class="card-body">
+
+                            <p> </p>
+
+                            <h5 class="card-title">Get 10% Discount At Liciouset</h5>
+
+                            <p class="card-text">Avail 10% instant discount on a minimum purchase of Rs. 1000 using CDB bank Net banking.</p>
+
+                            <a href="#">KNOW MORE</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+ 
+
+</body>
+
+</html>

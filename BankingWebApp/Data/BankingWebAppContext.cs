@@ -28,5 +28,11 @@ namespace BankingWebApp.Data
 
 
         public DbSet<BankingWebApp.Models.FD> FD { get; set; }
+       // public DbSet<BankingWebApp.Models.FixedDeposit> FixedDeposit { get; set; }
+
+        //public DbSet<BankingWebApp.Models.Transaction> Transaction { get; set; }
+
+
+        public DbSet<BankingWebApp.Models.Tr> Tr { get; set; }
     }
 }

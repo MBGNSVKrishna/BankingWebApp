@@ -51,7 +51,8 @@
                 font-family: 'Numans', sans-serif;
             }*@
           body{
-              background-color: magenta;
+            
+              
           }
            
             .container {
@@ -178,7 +179,7 @@
                                         <input asp-for="Password" class="form-control" placeholder="Password" />
                                         <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
-                                    <div>
+                                     <div class="input-group mb-3">
                                         <dnt-captcha asp-captcha-generator-max="999999"
                                                      asp-captcha-generator-min="111111"
                                                      asp-captcha-generator-language="English"
@@ -223,7 +224,9 @@
             </div>
 
         </div>
-
+        <div>
+            <br /><br /><br /><br /><br /> <br /> <br /> <br /><br />
+        </div>
 
         <script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -231,6 +234,10 @@
         <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
         <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
         <script src="~/js/jquery.unobtrusive-ajax.js"></script>
+
+
+
+
 
         @section Scripts {
             @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
